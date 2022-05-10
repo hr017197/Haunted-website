@@ -1,0 +1,325 @@
+@font-face{
+    font-family:Wicked;
+    src: url(Wicked\ Tricker.ttf)
+  }
+   
+  main{
+      background-color:white;
+      color: gray;
+  }
+   
+  body{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+    font-size: 12pt;
+  }
+  h2{
+    font-family: Wicked;
+    font-size: 40pt;
+    text-align: center;
+    color: orange;
+  }
+  ol, ul{
+    padding: 0;
+    list-style: none;
+  }
+  header{
+    overflow: hidden;
+  }
+   
+   
+  /* beginning of grid for layout*/
+   
+  .wrapper {
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: 1fr 2fr 2fr;
+      grid-template-rows: .5fr 3fr 2.5fr .2fr;
+      grid-template-areas:
+      "logo headers headers"
+      "picture picture picture"
+      "about about side"
+      "footer footer footer";
+  }
+  /* header section*/
+  #logo {
+      grid-area: logo;
+      padding: 10px 0;
+    }
+  #header{
+      grid-area: headers;
+      text-align: center;
+      width: 70%;
+      height: 95%
+    }
+  #header ul{
+    text-align: center;
+    float: left;
+    position: absolute;
+    margin: none;
+    background: orange;
+  }
+  #header li{
+    display: inline-block;
+    padding: none;
+    margin: none;
+  }
+  #header li a, #header li span{
+    display: inline-block;
+    padding: 0em 1.5em;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 60px;
+  }
+  #header li a{    
+    color: white;
+  }
+     
+  #header li:hover a, #header li span{
+    background: red;
+    color: white;
+    border-left: 1px solid black;
+    text-decoration: none;
+  }
+   
+   
+  .picture {
+    display:flex;
+    grid-area: picture;
+    max-width:100%;
+    height:auto;
+    }
+  #center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    box-shadow: 10px 10px 5px orange;
+  }
+   
+  .about {
+      grid-area: about;
+    }
+  .mainpar{
+    font-size: 15pt;
+  }
+   
+  .side_photos{
+      grid-area: side;
+      max-width: 100%;
+      height: auto;
+      float: center;
+      padding: 5px;
+    }
+  figure{
+    text-align: center;
+  }
+   
+  .footer{
+    grid-area: footer;
+    text-align: center;
+  }
+   
+  .tickets{
+    text-align: center;
+  }
+   
+  .mytickets{
+    padding: 10px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 10px;
+  }
+  
+  .mainpar{
+    text-align: center;
+  }
+   
+  .video{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+   
+/*Css to toggle light/dark versions*/
+  
+  .label {
+    grid-area: side;
+    position: relative;
+    background-color: gray;
+    display: flex;
+    width: 50px;
+    height: 26px;
+    margin-left: 200px;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .ball{
+    width: 22px;
+    height: 22px;
+    background-color: yellow;
+    position: absolute;
+    top:2px;
+    left: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+  }
+   
+  .checkbox:checked + .label .ball{
+    background-color: black;
+    transform: translateX(24px);
+  }
+  
+  .checkbox{
+    opacity: 0;
+    position: absolute;
+  }
+
+  .text{
+    text-align: center;
+  }
+
+/*Css for visitor form */
+
+/*Css for visitor form*/
+
+form {
+  width: 400px;
+  margin: auto;
+  font-size: 25px;
+}
+
+.errorMsg {
+  color: red;
+}
+
+input.was-validated:invalid {
+  color: red;
+  border: 3px solid red;
+}
+
+input.was-validated:valid {
+  color: green;
+  border: 3px solid green;
+}
+
+input.was-validated:invalid ~ div.errorMsg {
+  display: block;
+}
+
+input:valid ~ div.errorMsg, input:invalid ~ div.errorMsg {
+  display: none;
+}
+
+
+.container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.flex {
+  list-style-type: none;
+  padding: 0;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.flex li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.flex li li input,
+.flex li textarea {
+  padding: 15px;
+  font: normal 16px/1.5 sans-serif;
+}
+
+.flex button {
+  margin: auto;
+  padding: 22px 46px;
+  font-weight: 600;
+  font-size: large;
+  border: none;
+  background: orange;
+  color: #f2f2f2;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  border-radius: 4px;
+}
+
+.flex > li {
+  margin-bottom: 20px;
+}
+
+.flex > li > label {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 140px;
+          flex: 1 0 140px;
+  max-width: 200px;
+}
+
+.flex > li + * {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 200px;
+          flex: 1 0 200px;
+}
+
+.flex > input[type='radio'] ~ div.errorMsg,
+.flex > input[type='checkbox'] ~ div.errorMsg {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 350px;
+          flex: 1 0 350px;
+  text-align: right;
+}
+/*# sourceMappingURL=main.css.map */
+
+.successMsg{
+  grid-area: about;
+  font-size: 25px;
+
+}
+
+
+
+th, td{
+  padding: 10px;
+  text-align: center;
+}
+
+#visitorList {
+  color:black;
+  font-size: 20;
+  margin: 3px;
+}
+th{
+  background-color: orange;
+  
+}
+a{
+  color: orange;
+}
+
+.hidden{
+  display: none;
+}

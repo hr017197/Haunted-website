@@ -1,0 +1,187 @@
+<!--
+Project Name: Student Class List
+Author: Hannah Reader
+Due Date: 10/9/21
+Course: CS 2420
+
+    I declare that the following source code was written solely by me.
+    I understand that copying any source code, in whole or in part,
+    constitutes cheating, and that I will receive a zero on this project
+    if I am found in violation of this policy.
+
+For this project I created a website for a haunted house called Draculas
+Dungeon. I messed up on the javascript as I created seperate html files for each
+page.
+-->
+<!--I did not implement the pages with hide and show, I tried entering it
+a few different ways within the html main file and the separate javascript ones, however
+I ran into issues both times where my sections weren't hiding but were instead showing all of the content.
+I left the sections where I was testing and implementing it -->
+
+
+<DOCTYPE html5></DOCTYPE>
+<main>
+<title>Draculas Dungeon</title>
+<link href="main.css" rel="stylesheet" id = "theme" type="text/css">
+<script type="text/javascript" src="js/main.js"></script>
+<div class = "wrapper">
+<body>
+    <div id = "logo">
+        <img src = "potential logo.jpg" alt = "Dracula Logo">
+    </div>
+    <header>
+        <div id = "header">
+            <nav>
+                <ul>
+                    <!--<li class="active">--> 
+                    <!--
+                    <li><a href="#about_content" id ="about" class = "menu" onclick = "menuClick">Home</a></li>
+                    <li><a href="#ticket_content" id="ticket" class = "menu" onclick = "menuClick">Tickets</a></li>
+                    <li><a href="#location_content" id = "location" class = "menu">Location</a></li>
+                    <li><a href="#contact_content" id = "contact" class = "menu">Contact Us</a></li>
+                    -->
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="tickets.html">Tickets</a></li>
+                    <li><a href="location.html">Location</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="visitor.html">Visitor Form</a></li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+
+
+    <!--<section id="about_content" class = "pageContent"-->
+    <div class = "picture">
+        <img id = "center" src="main_picture.jpg" alt="Draculas Dungeon Haunted House">
+    </div>  
+    <div class = "about">
+        <h2>Draculas Dungeon</h2>
+        <p class = "mainpar">
+        Are you ready to have the spookiest and funnest night of your life?
+        Well we are here to offer that! Draculas Dungeon is an hour long walk 
+        through haunted house with multiple attractions throughout. From zombies,
+        to americas most famous killers you are bound to get a scare. These haunts
+        can't wait to see you so what are you waiting for
+    </p>
+    <iframe class = "video" width="420" height="315"
+        src="https://www.youtube.com/embed/62lPbRkV0ls">
+    </iframe>
+    </div>
+<!--
+    <section id="ticket_content" class = "pageContent" style="display:none"></section>
+        <div class = "picture">
+            <img id = "center" src="ticketspage.jpg" alt="Draculas Dungeon Haunted House">
+        </div>  
+        <div class = "about">
+            <h2>Tickets</h2>
+            <div class= "tickets">
+                <p>We are open from 8-12 pm Thursday-Saturday the month of October. </p>
+                <select class = "mytickets">
+                    <option>---Choose Time---</option>
+                    <option>8:00</option>
+                    <option>8:30</option>
+                    <option>9:00</option>
+                    <option>9:30</option>
+                    <option>10:00</option>
+                    <option>10:30</option>
+                    <option>11:00</option>
+                </select>
+                <select class = "mytickets">
+                    <option>---Choose Day---</option>
+                    <option>Thurday</option>
+                    <option>Friday</option>
+                    <option>Saturday</option>
+                    <option>Sunday</option>
+                </select>
+                <select class = "mytickets">
+                    <option>---Choose Week---</option>
+                    <option>Week 1</option>
+                    <option>Week 2</option>
+                    <option>Week 3</option>
+                    <option>Week 4</option>
+                </select>
+                <input id="input" placeholder = "Enter your email"></input>
+                <button onclick = "tickets()">Confirm</button>
+            </div>
+        </div>
+    </section>
+
+
+    <section id = "contact_content" class = "pageContent">
+        <div class = "picture">
+            <img id = "center" src="contactuspage.jpg" alt="Clown section">
+        </div>  
+        <div class = "about">
+            <h2>Contact Us</h2>
+            <div class = "mainpar">
+                <p>
+                    We're here to answer any question you may have about Draculas Dungeon haunted house, 
+                    or the other various attractions we offer. Fill out the form with your email and our team will be in touch with you as soon as possible.
+                </p><p>
+                    Email: midnightterror.info@gmail.com
+                </p><p>
+                    Phone: (708) 571-0266
+                </p>
+                <input id="input" placeholder = "Enter your email"></input>
+                <button onclick = contact() id = "btn2">Send email</button>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id= "location_content" class = "pageContent">
+        <div class = "picture">
+            <img id = "center" src="locationpage.jpg" alt="Draculas Dungeon Haunted House">
+        </div>  
+        <div class = "about">
+            <h2>Location</h2>
+            <p class = "mainpar">                
+                DRACULAS DUNGEON HAUNTED ATTRACTION INC.
+                552 W 111th St, Provo, UT 84601</p>
+        </div>
+    </section>
+-->
+<!--this next section is my javascript to change the pages by hiding and showing them.-->
+<!--
+    <script>
+        function menuClick(ev){
+            let $el = $(this); //(ev.currentTarget) other way
+            $(".pageContent").hide();
+            $(`#${$el.attr("id")}_content`).show();
+
+        }
+    </script>
+-->
+
+
+    <div class = "side_photos">
+        <figure>
+            <img src = "sidephoto1.jpg" alt = "Vampire">
+            <figcaption>Vampire from our main attraction</figcaption>
+        </figure>
+        <figure>
+            <img src = "sidephoto2.jpg" alt = "Haunted Killers">
+            <figcaption>Some killers you may come across</figcaption>
+        </figure>
+        <div>
+            <input onclick = "toggleTheme()" type = "checkbox" id = "checkbox" class = "checkbox" checked>
+            <label for="checkbox" class = "label">
+                <div class = "ball"></div>
+            </label>
+            <p class = "text">Change theme here</p>
+        </div>
+    </div>
+    <div class = "footer">
+        <footer>© Draculas Dungeon Haunted Attraction | All Rights Reserved.</footer>
+    </div>
+</body>   
+</div>
+
+
+</main>
+

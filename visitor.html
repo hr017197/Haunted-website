@@ -1,0 +1,177 @@
+<!--this is the visitor page for the website. Users enter input and validation.js validates
+whether the information entered can be accepted-->
+<DOCTYPE html5></DOCTYPE>
+<html lang= "eng">
+<main>
+<title>Draculas Dungeon</title>
+<link href="main.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<!--script for model, controller, and js-->
+<div class = "wrapper">
+<body>
+    <div id = "logo">
+        <img src = "potential logo.jpg" alt = "Dracula Logo">
+    </div>
+    <header>
+        <div id = "header">
+            <nav>
+                <ul>
+                  <li class="active"><a href="index.html">Home</a></li>
+                  <li><a href="tickets.html">Tickets</a></li>
+                  <li><a href="location.html">Location</a></li>
+                  <li><a href="contact.html">Contact Us</a></li>
+                  <li><a href="visitor.html">Visitor Form</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <div class = "picture">
+        <img id = "center" src="visitors_page.jpg" alt="Draculas Dungeon Haunted House">
+    </div>  
+    <div class = "about">
+      <button onclick="showList()">Add Visitor</button>
+      <button onclick="loadVisitors()">Visitor Form</button>
+      <div class="container" id = "form">
+        <h2>Visitor Form</h2>
+        <div class="successMsg" style="display:none">
+          Thank you for logging your visit!
+        </div>
+        <!--may not need on submit portion, does not seem to change anything-->
+        <form onsubmit = "event.preventDefault();submitForm();" id="myform" novalidate>
+          <ul class="flex">
+            <li class="section-display">
+              <label for="first-name">First Name</label>
+              <input type="text" id="first-name" name="first-name" 
+                    placeholder="Enter your first name here" required>
+              <div class="errorMsg">First Name is Required</div>
+            </li>
+            <li >
+              <label for="last-name">Last Name</label>
+              <input type="text"  id="last-name" name="last-name" placeholder="Enter your last name here" required>
+              <div class="errorMsg">Last Name is Required</div>
+            </li>
+            <li >
+              <label for="address">Address</label>
+              <input type="text"  id="address" name="address" placeholder="Enter your address here" required>
+              <div class="errorMsg"></div>
+            </li>
+            <li >
+              <label for="city">City</label>
+              <input type="text"  id="city" name="city" placeholder="Enter your city here" required>
+              <div class="errorMsg"></div>
+            </li>
+            <li >
+              <label for="state">State</label>
+              <input type="text"  id="state"  name="state" placeholder="Enter your state here" required>
+              <div class="errorMsg"></div>
+            </li>
+            <li >
+              <label for="zip">Zip</label>
+              <input id="zip" name="zip" type="text" pattern = "^\d{5}$" placeholder="Enter a zip code here" required>
+              <div class="errorMsg">You must enter a valid Zip Code</div>
+            </li>
+            <li >
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" pattern = "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Enter your email here" required>
+              <div class="errorMsg">You must enter a valid email</div>
+            </li>
+            <li>
+              <label for="phone">Phone</label>
+              <input type="phone" id="phone" placeholder="Enter your phone here" pattern = "^\d{3}-\d{3}-\d{4}$" o required>
+              <div class="errorMsg">You must enter a valid phone number, include dashes between number pairs</div>
+            </li>
+            <li>
+              <h2>How did you find my page</h2>
+            </li>
+            <li>
+              <input type="checkbox" id='google' name='find-page' value="google">
+              <label for="google">Google Search</label>
+            </li>
+            <li>
+              <input type="checkbox" id='friend' name='find-page' value="friend">
+              <label for="friend">Friend</label>
+            </li>
+            <li>
+              <input type="checkbox" id='newspaper' name='find-page' value="newspaper">
+              <label for="newspaper">News Paper</label>
+              <div class="errorMsg">You must check at least one</div>
+            </li>
+            
+            <li>
+              <label for="comment">Comments</label>
+              <textarea rows="4" id="comment" placeholder="Enter your comments here"></textarea>
+            </li>
+            
+            <li>
+              <button id="formSubmit" type="submit">Send</button>
+            </li>
+          </ul>
+        </form>
+        </div>
+        <!--This is section is different than table render jquery-->
+        <!--in video, he put form and table in same table. did it differently here-->
+        <div id = "maintable">
+            <table class = "list" id = "visitorList">
+              <thead>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th class = "hidden">ID</th> <!--hide this section somehow-->
+                <th>Actions</th>
+              </thead>
+              <tbody>
+                    <!--insert items in here-->
+              </tbody>
+            </table>
+        </div>
+        
+    
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      <script src="js/validation.js"></script>
+      <script src="js/model.js"></script>
+      <script src="js/controller.js"></script>
+      <script src="js/view.js"></script>
+      <!--might not need the next two sections-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+      <script>
+        $(document).ready(function () {
+          initValidation("#myform"); //need to possibly change this. controller will validate the form
+          renderTable($("#visitorList"), visitors);
+        });
+      </script>
+      
+
+    </div>
+
+      <div class = "side_photos">
+        <figure>
+            <img src = "sidephoto1.jpg" alt = "Vampire">
+            <figcaption>Vampire from our main attraction</figcaption>
+        </figure>
+        <figure>
+            <img src = "sidephoto2.jpg" alt = "Haunted Killers">
+            <figcaption>Some killers you may come across</figcaption>
+        </figure>
+        <div>
+            <script src="js/main.js"></script>
+            <input onclick = "toggleTheme()" type = "checkbox" id = "checkbox" class = "checkbox" checked>
+            <label for="checkbox" class = "label">
+                <div class = "ball"></div>
+            </label>
+            <p class = "text">Change theme here</p>
+        </div>
+    </div>
+    <div class = "footer">
+        <footer>© Draculas Dungeon Haunted Attraction | All Rights Reserved.</footer>
+    </div>
+        
+</body>   
+</div>
+
+
+</main>
+</html>
